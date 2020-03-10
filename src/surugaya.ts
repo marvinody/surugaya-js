@@ -33,7 +33,18 @@ const x = Xray({
   },
 })
 
-export async function search(query: string, options: {} = {}): Promise<Item[]> {
+type Options = {
+  maxPages: number
+}
+
+const defaultOptions = {
+  maxPages: Infinity,
+}
+
+export async function search(
+  query: string,
+  options: Options = defaultOptions
+): Promise<Item[]> {
   const queryString = qs.stringify({
     search_word: query,
     rankBy: "price:descending",
@@ -53,7 +64,7 @@ export async function search(query: string, options: {} = {}): Promise<Item[]> {
     ]
   )
     .paginate("li.next a@href")
-    .limit(1)
+    .limit(options.maxPages)
 
   return results.flatMap(result =>
     result.prices.map((price, idx) => ({
@@ -66,8 +77,6 @@ export async function search(query: string, options: {} = {}): Promise<Item[]> {
     }))
   )
 }
-
-search("東方 ふもふも").then(console.log)
 
 type Item = {
   productURL: string

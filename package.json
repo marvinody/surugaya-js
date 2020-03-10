@@ -1,15 +1,27 @@
 {
   "name": "surugaya",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Scraper for JP site 'surugaya' to check for stuff",
   "scripts": {
     "prepublish": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "japanese",
+    "JP",
+    "scraper",
+    "fumofumo",
+    "surugaya",
+    "auction",
+    "sales"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:marvinody/surugaya-js.git"
+  },
+  "author": "marvinody",
   "license": "ISC",
   "dependencies": {
     "@types/x-ray": "^2.3.3",
