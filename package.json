@@ -1,13 +1,20 @@
 {
   "name": "surugaya",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
+    "prepublish": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/x-ray": "^2.3.3",
+    "axios": "^0.19.2",
+    "qs": "^6.9.1",
+    "x-ray": "^2.3.4"
+  }
 }
